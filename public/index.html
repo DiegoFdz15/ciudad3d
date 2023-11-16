@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciudad 3D</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="Ciudad 3d desarrollada en mapbox por DFZ https://github.com/DiegoFdz15/">
+</head>
+<body>
+    <div id="sidebar_botones">
+        <div class="btn_img">
+            <img src="https://www.mcde.gov.py/assets/images/logo.svg" id="cde_logo" alt="cde.svg" style="width: 100%;">
+        </div>
+        <div class="btn_img">
+            <button type="button" value="informacion" id="btn_inf" class="btn_sidebar"><img src="https://www.svgrepo.com/show/450991/information.svg" alt=""></button>
+        </div>
+        <div class="btn_img">
+            <button type="button" value="capas" id="btn_layers" class="btn_sidebar"><img src="https://www.svgrepo.com/show/497224/layer.svg" alt=""></button>
+        </div>
+        <div class="btn_img">
+            <button type="button" value="normativas" id="btn_rules" class="btn_sidebar"><img src="https://www.svgrepo.com/show/496863/book-saved.svg" alt=""></button>
+        </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div id="container">
+        <div id="sidebar_informacion" class="sidebar">
+            <div class="nombre_capa">
+                <p>información</p>
+                <hr style="width: 90%;">
+            </div>
+            <br>
+            <div id="seleccion_p">
+                <p id="n">Seleccione una parcela</p>
+            </div>
+            <h3 id="building_name"></h3>
+            <h3 id="building_description"></h3>
+        </div>
+    
+        <div id="sidebar_capas" class="sidebar">
+            <div class="nombre_capa">
+                <p>Capas</p>
+                <hr style="width: 90%;">
+            </div>
+            <div id="div_capas">
+                <div class="checkboxes">
+                    <input type="checkbox" id="calle_1" class="capas_checkbox">
+                    <p class="capa_titulo">Rutas</p>
+                </div>
+                
+                <div class="checkboxes">
+                    <input type="checkbox" id="r_asfaltado" class="capas_checkbox">
+                    <p class="capa_titulo">Asfaltado</p>
+                </div>
+                
+                <div class="checkboxes">
+                    <input type="checkbox" id="r_empedrado" class="capas_checkbox">
+                    <p class="capa_titulo">Empedrado</p>
+                </div>
+                
+                <div class="checkboxes">
+                    <input type="checkbox" id="r_tierra" class="capas_checkbox">
+                <p class="capa_titulo">Tierra</p>
+                </div>
+
+                <div class="checkboxes">
+                    <input type="checkbox" id="plazacity" class="capas_checkbox">
+                    <p class="capa_titulo">Edificios con informacion</p>
+                </div>
+
+            </div>
+        </div>
+    
+        <div id="sidebar_normativas" class="sidebar">
+            <div class="nombre_capa">
+                <p>Catastro</p>
+                <hr style="width: 90%;">
+            </div>
+            <div id="div_normativas">
+                <div class="div_rules">
+                    <a href="https://www.catastro.gov.py/archivos/decretos/Relacionadas%20al%20Catastro/Decreto%2051-52.pdf" target="_blank">DECRETO-LEY Nº 51/52</a>
+                </div>
+                <div class="div_rules">
+                    <a href="https://www.catastro.gov.py/public/6bc3d8_ley%201909-02%20loteamientos.pdf" target="_blank">DECRETO-LEY Nº 1.909/02</a><br>
+                </div>
+                <div class="div_rules">
+                    <a href="https://www.asuncion.gov.py/wp-content/uploads/2016/04/ORDEN-2012-217-REGLAMENTA-construccion-y-uso-de-VEREDAS-deroga-6-9250-9425-96-y-329-06VIGENTE.pdf" target="_blank">DECRETO-LEY Nº 217/12</a><br>
+                </div>
+                <div class="div_rules">
+                    <a href="https://www.catastro.gov.py/archivos/leyes/Delimitacion%20de%20zonas%20urbanas/varios/ordenanza-n%C2%BA-20-1989-j-m-ciudad-del-este.pdf" target="_blank">Limites Zonales</a><br>
+                </div>
+                <div class="div_rules">
+                    <a href="https://www.catastro.gov.py/archivos/costos%20y%20requisitos/requisitos/Certificados%20Catastrales.pdf" target="_blank">Certificado de Catastro</a><br>
+                </div>
+                <div class="div_rules">
+                    <a href="https://www.asuncion.gov.py/wp-content/uploads/2022/07/ORD-1990-26104-REGLAMENTO-GENERAL-DE-LA-CONSTRUCCION.pdf" target="_blank">Reglamento general de construccion</a><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="div_map_buttons">
+        <input type="button" id="b_3d" value="2D" class="map_buttons">
+        <input type="button" id="b_style" value="Satelite" class="map_buttons">
+    </div>
+    <div id="map"></div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+    <script src="events.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
